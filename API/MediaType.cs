@@ -42,7 +42,7 @@ namespace ClientAPI.API
                     return "video/mp4";
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(value), value, null);
+                    return "";
 
             }
         }

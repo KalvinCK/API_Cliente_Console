@@ -3,13 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClientAPI
 {
-    [Table("User")]
-    public class User
+    class User
     {
-        [Column("ID")]
         public int Id { get; set; }
-        public string UserName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        public required string UserName { get; set; } = string.Empty;
+        public required string Email { get; set; } = string.Empty;
+        public required string Password { get; set; } = string.Empty;
+
+        public override string ToString()
+        {
+            return "ID: " + Id + "\n" +
+            "User name: " + UserName + "\n" +
+            "Email: " + Email + "\n" +
+            "Password: " + Password + "\n";
+        }
     }
 }
